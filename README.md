@@ -21,8 +21,12 @@
 ```
 bride_booking/
 ├── index.html          # Entire site — HTML, CSS, and JS in one file
+├── index-hi.html       # Hindi (हिन्दी) translation
 ├── docs/
 │   └── screenshot.png  # Site preview image
+├── .claude/
+│   └── commands/
+│       └── translate-site.md  # Slash command to generate translations
 ├── .github/
 │   └── workflows/
 │       └── deploy.yml  # GitHub Actions → GitHub Pages
@@ -32,6 +36,10 @@ bride_booking/
 ## About the Project
 
 A single-page booking website for **Ananya Bridal Photography**, designed to appeal to affluent Indian wedding clients. The design uses a rich jewel-tone palette — deep maroon, warm saffron, and gold — with Cinzel Decorative and EB Garamond fonts to evoke traditional Indian luxury. Key features include Indian wedding ceremony packages (Mehendi, Sangeet, Shaadi Royale) with INR pricing, a six-image bridal gallery, and a booking form that POSTs directly to FormSubmit.co.
+
+### Multi-Language Support
+
+The site includes a Hindi (हिन्दी) translation with a language switcher in the nav bar. Additional languages (Punjabi, Sindhi, Marathi, Bengali) can be generated using the `/translate-site` Claude Code slash command.
 
 ## How to Use
 

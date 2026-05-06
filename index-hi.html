@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ananya — Bridal Photography</title>
+  <title>Ananya — वधू फ़ोटोग्राफ़ी</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@400;600;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Yatra+One&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
       --bg: #FBF5E6;
@@ -22,9 +22,9 @@
       --text: #2C1810;
       --text-light: #7A5545;
       --white: #FFFFFF;
-      --font-display: 'Cinzel Decorative', serif;
-      --font-heading: 'Cinzel', serif;
-      --font-body: 'EB Garamond', Georgia, serif;
+      --font-display: 'Yatra One', serif;
+      --font-heading: 'Noto Sans Devanagari', sans-serif;
+      --font-body: 'Noto Sans Devanagari', sans-serif;
       --max-w: 1100px;
       --transition: 0.3s ease;
     }
@@ -611,29 +611,6 @@
     }
     @keyframes spin { to { transform: rotate(360deg); } }
 
-    /* ─── RESPONSIVE ─── */
-    @media (min-width: 600px) {
-      .contact-cards { grid-template-columns: repeat(3, 1fr); }
-    }
-    @media (min-width: 768px) {
-      #about .container { grid-template-columns: 1fr 1fr; }
-      .packages-grid { grid-template-columns: repeat(3, 1fr); }
-      .form-grid { grid-template-columns: 1fr 1fr; }
-      .form-field.full { grid-column: 1 / -1; }
-    }
-    @media (max-width: 767px) {
-      nav { padding: 1rem 1.25rem; }
-      .nav-links { gap: 1.25rem; }
-      .nav-links a { font-size: 0.65rem; }
-      section { padding: 4rem 1.25rem; }
-      .form-wrap { padding: 2rem 1.25rem; }
-      .about-image::before, .about-image::after { display: none; }
-    }
-    @media (max-width: 480px) {
-      .nav-links { gap: 0.75rem; }
-      .nav-logo { font-size: 1.2rem; }
-    }
-
     /* ─── LANG SWITCHER ─── */
     .lang-switcher {
       display: flex;
@@ -656,13 +633,34 @@
       color: var(--gold-light);
       border-bottom: 1px solid var(--gold);
     }
+
+    /* ─── RESPONSIVE ─── */
+    @media (min-width: 600px) {
+      .contact-cards { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (min-width: 768px) {
+      #about .container { grid-template-columns: 1fr 1fr; }
+      .packages-grid { grid-template-columns: repeat(3, 1fr); }
+      .form-grid { grid-template-columns: 1fr 1fr; }
+      .form-field.full { grid-column: 1 / -1; }
+    }
     @media (max-width: 767px) {
+      nav { padding: 1rem 1.25rem; }
+      .nav-links { gap: 1.25rem; }
+      .nav-links a { font-size: 0.65rem; }
+      section { padding: 4rem 1.25rem; }
+      .form-wrap { padding: 2rem 1.25rem; }
+      .about-image::before, .about-image::after { display: none; }
       .lang-switcher {
         margin-left: 0.75rem;
         padding-left: 0.75rem;
         gap: 0.3rem;
       }
       .lang-switcher a { font-size: 0.55rem; }
+    }
+    @media (max-width: 480px) {
+      .nav-links { gap: 0.75rem; }
+      .nav-logo { font-size: 1.2rem; }
     }
   </style>
 </head>
@@ -672,14 +670,14 @@
   <nav id="main-nav">
     <a href="#hero" class="nav-logo">Ananya</a>
     <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#packages">Packages</a></li>
-      <li><a href="#gallery">Gallery</a></li>
-      <li><a href="#booking" class="btn" style="padding:0.4rem 1.2rem;font-size:0.65rem;border:1px solid var(--gold);">Book Now</a></li>
+      <li><a href="#about">परिचय</a></li>
+      <li><a href="#packages">पैकेज</a></li>
+      <li><a href="#gallery">गैलरी</a></li>
+      <li><a href="#booking" class="btn" style="padding:0.4rem 1.2rem;font-size:0.65rem;border:1px solid var(--gold);">अभी बुक करें</a></li>
     </ul>
     <div class="lang-switcher">
-      <a href="index.html" class="active">EN</a>
-      <a href="index-hi.html">हि</a>
+      <a href="index.html">EN</a>
+      <a href="index-hi.html" class="active">हि</a>
     </div>
   </nav>
 
@@ -717,10 +715,10 @@
       </svg>
     </div>
     <div class="hero-content">
-      <span class="hero-kicker">विवाह चित्रकला &nbsp;·&nbsp; Bridal Photography</span>
-      <h1>Your Shaadi.<br>Eternally Beautiful.</h1>
-      <p>From Mehendi to Vidaai — every precious moment, preserved forever.</p>
-      <a href="#booking" class="btn btn-saffron">Reserve Your Date</a>
+      <span class="hero-kicker">विवाह चित्रकला &nbsp;·&nbsp; वधू फ़ोटोग्राफ़ी</span>
+      <h1>आपकी शादी।<br>चिरकाल सुंदर।</h1>
+      <p>मेहंदी से विदाई तक — हर अनमोल पल, सदा के लिए संजोया हुआ।</p>
+      <a href="#booking" class="btn btn-saffron">अपनी तिथि आरक्षित करें</a>
     </div>
   </section>
 
@@ -730,13 +728,13 @@
       <div class="about-image">
         <img
           src="https://images.unsplash.com/photo-1610173827043-9db50e0d8ef9?w=800&auto=format&fit=crop"
-          alt="Indian bride in red and gold bridal attire"
+          alt="लाल और सुनहरे वधू परिधान में भारतीय दुल्हन"
           loading="lazy"
         />
       </div>
       <div class="about-text">
-        <p class="section-label">Meri Kahani</p>
-        <h2 class="section-title">Capturing the Soul of Every Shaadi</h2>
+        <p class="section-label">मेरी कहानी</p>
+        <h2 class="section-title">हर शादी की आत्मा को कैद करना</h2>
         <div class="mandala-divider">
           <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="17" cy="17" r="2.5" fill="#C9952A"/>
@@ -748,19 +746,19 @@
           </svg>
         </div>
         <p>
-          Namaste — I am Priya, a wedding photographer with over a decade of experience
-          capturing the magic of Indian weddings across Mumbai, Delhi, Udaipur, and beyond.
-          I understand the grandeur, the rituals, and the deeply intimate moments that make
-          each Indian wedding utterly unique.
+          नमस्ते — मैं Priya हूँ, एक विवाह फ़ोटोग्राफ़र जिसे Mumbai, Delhi, Udaipur और उससे आगे
+          भारतीय शादियों के जादू को कैद करने का एक दशक से अधिक का अनुभव है।
+          मैं उस भव्यता, उन रीति-रिवाजों और उन गहरे अंतरंग क्षणों को समझती हूँ जो
+          हर भारतीय शादी को बिल्कुल अनूठा बनाते हैं।
         </p>
         <p>
-          From the intricate mehndi patterns on a bride's hands to the radiant joy of a
-          baraat procession — I see the divine in every detail. My work blends cinematic
-          storytelling with a deep reverence for our traditions, creating heirlooms your
-          family will treasure for generations.
+          दुल्हन के हाथों पर बारीक मेहंदी के पैटर्न से लेकर बारात के जुलूस की उज्ज्वल ख़ुशी तक
+          — मैं हर विवरण में दिव्यता देखती हूँ। मेरा काम सिनेमाई कहानी कहने को हमारी
+          परंपराओं के प्रति गहरी श्रद्धा के साथ जोड़ता है, ऐसी धरोहरें बनाता है जिन्हें
+          आपका परिवार पीढ़ियों तक सँजोएगा।
         </p>
         <p>
-          Based in Mumbai. Available across India and internationally for destination weddings.
+          Mumbai में स्थित। पूरे भारत और अंतरराष्ट्रीय स्तर पर डेस्टिनेशन शादियों के लिए उपलब्ध।
         </p>
         <p class="about-signature">Priya Sharma</p>
       </div>
@@ -771,8 +769,8 @@
   <section id="packages">
     <div class="container">
       <div class="section-header">
-        <p class="section-label">Our Collections</p>
-        <h2 class="section-title">Choose Your Package</h2>
+        <p class="section-label">हमारे संग्रह</p>
+        <h2 class="section-title">अपना पैकेज चुनें</h2>
         <div class="mandala-divider" style="max-width:320px;margin-left:auto;margin-right:auto;">
           <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="17" cy="17" r="2.5" fill="#C9952A"/>
@@ -785,63 +783,63 @@
       </div>
       <div class="packages-grid">
 
-        <!-- Mehendi -->
+        <!-- मेहंदी -->
         <div class="pkg-card">
           <div class="pkg-card-top"></div>
           <div class="pkg-card-body">
-            <p class="pkg-event">Pre-Wedding Ceremonies</p>
-            <p class="pkg-name">Mehendi</p>
+            <p class="pkg-event">विवाह-पूर्व रस्में</p>
+            <p class="pkg-name">मेहंदी</p>
             <p class="pkg-price">₹85,000</p>
-            <p class="pkg-price-secondary">~ $1,000 USD &nbsp;·&nbsp; per session</p>
+            <p class="pkg-price-secondary">~ $1,000 यूएसडी &nbsp;·&nbsp; प्रति सत्र</p>
             <ul class="pkg-features">
-              <li>4 hours of coverage</li>
-              <li>Mehendi &amp; Haldi ceremonies</li>
-              <li>120 professionally edited photos</li>
-              <li>Private online gallery</li>
-              <li>High-resolution digital files</li>
+              <li>4 घंटे की कवरेज</li>
+              <li>मेहंदी एवं हल्दी रस्में</li>
+              <li>120 पेशेवर रूप से संपादित तस्वीरें</li>
+              <li>निजी ऑनलाइन गैलरी</li>
+              <li>उच्च-रिज़ॉल्यूशन डिजिटल फ़ाइलें</li>
             </ul>
-            <button class="pkg-btn" data-package="Mehendi">Book This Package</button>
+            <button class="pkg-btn" data-package="Mehendi">यह पैकेज बुक करें</button>
           </div>
         </div>
 
-        <!-- Sangeet -->
+        <!-- संगीत -->
         <div class="pkg-card featured">
           <div class="pkg-card-top"></div>
           <div class="pkg-card-body">
-            <span class="pkg-badge">Most Popular</span>
-            <p class="pkg-event">Sangeet + Wedding Day</p>
-            <p class="pkg-name">Sangeet</p>
+            <span class="pkg-badge">सबसे लोकप्रिय</span>
+            <p class="pkg-event">संगीत + विवाह का दिन</p>
+            <p class="pkg-name">संगीत</p>
             <p class="pkg-price">₹1,75,000</p>
-            <p class="pkg-price-secondary">~ $2,100 USD &nbsp;·&nbsp; per wedding</p>
+            <p class="pkg-price-secondary">~ $2,100 यूएसडी &nbsp;·&nbsp; प्रति विवाह</p>
             <ul class="pkg-features">
-              <li>8 hours of coverage</li>
-              <li>Sangeet night + wedding day</li>
-              <li>350 professionally edited photos</li>
-              <li>Pre-wedding shoot included</li>
-              <li>Printed keepsake album</li>
-              <li>Private online gallery</li>
+              <li>8 घंटे की कवरेज</li>
+              <li>संगीत की रात + विवाह का दिन</li>
+              <li>350 पेशेवर रूप से संपादित तस्वीरें</li>
+              <li>प्री-वेडिंग शूट शामिल</li>
+              <li>मुद्रित स्मृति एल्बम</li>
+              <li>निजी ऑनलाइन गैलरी</li>
             </ul>
-            <button class="pkg-btn" data-package="Sangeet">Book This Package</button>
+            <button class="pkg-btn" data-package="Sangeet">यह पैकेज बुक करें</button>
           </div>
         </div>
 
-        <!-- Shaadi Royale -->
+        <!-- शादी रॉयल -->
         <div class="pkg-card">
           <div class="pkg-card-top"></div>
           <div class="pkg-card-body">
-            <p class="pkg-event">Complete Wedding Experience</p>
-            <p class="pkg-name">Shaadi Royale</p>
+            <p class="pkg-event">संपूर्ण विवाह अनुभव</p>
+            <p class="pkg-name">शादी रॉयल</p>
             <p class="pkg-price">₹3,25,000</p>
-            <p class="pkg-price-secondary">~ $3,900 USD &nbsp;·&nbsp; per wedding</p>
+            <p class="pkg-price-secondary">~ $3,900 यूएसडी &nbsp;·&nbsp; प्रति विवाह</p>
             <ul class="pkg-features">
-              <li>Full 3-day coverage</li>
-              <li>All ceremonies included</li>
-              <li>600+ professionally edited photos</li>
-              <li>2 photographers + videographer</li>
-              <li>Drone aerial shots</li>
-              <li>Luxury lay-flat heirloom album</li>
+              <li>पूरे 3 दिन की कवरेज</li>
+              <li>सभी रस्में शामिल</li>
+              <li>600+ पेशेवर रूप से संपादित तस्वीरें</li>
+              <li>2 फ़ोटोग्राफ़र + वीडियोग्राफ़र</li>
+              <li>ड्रोन एरियल शॉट्स</li>
+              <li>लक्ज़री लेय-फ़्लैट विरासती एल्बम</li>
             </ul>
-            <button class="pkg-btn" data-package="Shaadi Royale">Book This Package</button>
+            <button class="pkg-btn" data-package="Shaadi Royale">यह पैकेज बुक करें</button>
           </div>
         </div>
 
@@ -853,8 +851,8 @@
   <section id="gallery">
     <div class="container">
       <div class="section-header">
-        <p class="section-label">Portfolio</p>
-        <h2 class="section-title">A Glimpse of Our Work</h2>
+        <p class="section-label">पोर्टफ़ोलियो</p>
+        <h2 class="section-title">हमारे काम की एक झलक</h2>
         <div class="mandala-divider" style="max-width:320px;margin-left:auto;margin-right:auto;">
           <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="17" cy="17" r="2.5" fill="#D4651A"/>
@@ -867,22 +865,22 @@
       </div>
       <div class="gallery-grid">
         <div class="gallery-item">
-          <img src="https://images.unsplash.com/photo-1742891602017-40b3a924f476?w=600&auto=format&fit=crop" alt="Indian bride with elaborate makeup and jewellery" loading="lazy" />
+          <img src="https://images.unsplash.com/photo-1742891602017-40b3a924f476?w=600&auto=format&fit=crop" alt="विस्तृत मेकअप और आभूषणों वाली भारतीय दुल्हन" loading="lazy" />
         </div>
         <div class="gallery-item">
-          <img src="https://images.unsplash.com/photo-1617633150878-7df1d12a9a57?w=600&auto=format&fit=crop" alt="Indian bride in red and gold sari" loading="lazy" />
+          <img src="https://images.unsplash.com/photo-1617633150878-7df1d12a9a57?w=600&auto=format&fit=crop" alt="लाल और सुनहरी साड़ी में भारतीय दुल्हन" loading="lazy" />
         </div>
         <div class="gallery-item">
-          <img src="https://images.unsplash.com/flagged/photo-1551854716-8b811be39e7e?w=600&auto=format&fit=crop" alt="Indian bride in green and gold lehenga" loading="lazy" />
+          <img src="https://images.unsplash.com/flagged/photo-1551854716-8b811be39e7e?w=600&auto=format&fit=crop" alt="हरे और सुनहरे लहंगे में भारतीय दुल्हन" loading="lazy" />
         </div>
         <div class="gallery-item">
-          <img src="https://images.unsplash.com/photo-1654764746225-e63f5e90facd?w=600&auto=format&fit=crop" alt="Indian bride in red bridal outfit" loading="lazy" />
+          <img src="https://images.unsplash.com/photo-1654764746225-e63f5e90facd?w=600&auto=format&fit=crop" alt="लाल वधू परिधान में भारतीय दुल्हन" loading="lazy" />
         </div>
         <div class="gallery-item">
-          <img src="https://images.unsplash.com/photo-1570212773364-e30cd076539e?w=600&auto=format&fit=crop" alt="Indian bride in wedding sari" loading="lazy" />
+          <img src="https://images.unsplash.com/photo-1570212773364-e30cd076539e?w=600&auto=format&fit=crop" alt="विवाह साड़ी में भारतीय दुल्हन" loading="lazy" />
         </div>
         <div class="gallery-item">
-          <img src="https://images.unsplash.com/photo-1610047520958-b42ebcd2f6cb?w=600&auto=format&fit=crop" alt="Indian bride in red and white sari" loading="lazy" />
+          <img src="https://images.unsplash.com/photo-1610047520958-b42ebcd2f6cb?w=600&auto=format&fit=crop" alt="लाल और सफ़ेद साड़ी में भारतीय दुल्हन" loading="lazy" />
         </div>
       </div>
     </div>
@@ -892,8 +890,8 @@
   <section id="booking">
     <div class="container">
       <div class="section-header">
-        <p class="section-label">Reserve Your Date</p>
-        <h2 class="section-title">Book a Session</h2>
+        <p class="section-label">अपनी तिथि आरक्षित करें</p>
+        <h2 class="section-title">सत्र बुक करें</h2>
         <div class="mandala-divider" style="max-width:320px;margin-left:auto;margin-right:auto;">
           <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="17" cy="17" r="2.5" fill="#F0D080"/>
@@ -904,7 +902,7 @@
           </svg>
         </div>
         <p style="color:rgba(255,255,255,0.52);max-width:500px;margin:0 auto;text-align:center;font-style:italic;">
-          Share your details and we'll respond within 24 hours to confirm your special day.
+          अपनी जानकारी साझा करें और हम आपके विशेष दिन की पुष्टि के लिए 24 घंटे के भीतर उत्तर देंगे।
         </p>
       </div>
 
@@ -913,67 +911,67 @@
           <div class="form-grid">
 
             <div class="form-field">
-              <label for="fullName">Full Name *</label>
-              <input type="text" id="fullName" name="fullName" placeholder="Ananya Sharma" required />
+              <label for="fullName">पूरा नाम *</label>
+              <input type="text" id="fullName" name="fullName" placeholder="प्रिया शर्मा" required />
             </div>
 
             <div class="form-field">
-              <label for="email">Email Address *</label>
-              <input type="email" id="email" name="email" placeholder="ananya@example.com" required />
+              <label for="email">ईमेल पता *</label>
+              <input type="email" id="email" name="email" placeholder="priya@example.com" required />
             </div>
 
             <div class="form-field">
-              <label for="phone">Phone Number *</label>
+              <label for="phone">फ़ोन नंबर *</label>
               <input type="tel" id="phone" name="phone" placeholder="+91 98765 43210" required />
             </div>
 
             <div class="form-field">
-              <label for="preferredDate">Wedding Date *</label>
+              <label for="preferredDate">विवाह की तिथि *</label>
               <input type="date" id="preferredDate" name="preferredDate" required />
             </div>
 
             <div class="form-field">
-              <label for="preferredTime">Preferred Time *</label>
+              <label for="preferredTime">पसंदीदा समय *</label>
               <input type="time" id="preferredTime" name="preferredTime" required />
             </div>
 
             <div class="form-field">
-              <label for="package">Package *</label>
+              <label for="package">पैकेज *</label>
               <select id="package" name="package" required>
-                <option value="" disabled selected>Select a package</option>
-                <option value="Mehendi">Mehendi — ₹85,000</option>
-                <option value="Sangeet">Sangeet — ₹1,75,000</option>
-                <option value="Shaadi Royale">Shaadi Royale — ₹3,25,000</option>
+                <option value="" disabled selected>पैकेज चुनें</option>
+                <option value="Mehendi">मेहंदी — ₹85,000</option>
+                <option value="Sangeet">संगीत — ₹1,75,000</option>
+                <option value="Shaadi Royale">शादी रॉयल — ₹3,25,000</option>
               </select>
             </div>
 
             <div class="form-field">
-              <label for="location">Venue / City *</label>
+              <label for="location">स्थान / शहर *</label>
               <input type="text" id="location" name="location" placeholder="Taj Lake Palace, Udaipur" required />
             </div>
 
             <div class="form-field">
-              <label for="numberOfPeople">Expected Guests *</label>
+              <label for="numberOfPeople">अपेक्षित अतिथि *</label>
               <input type="number" id="numberOfPeople" name="numberOfPeople" min="1" max="5000" placeholder="500" required />
             </div>
 
             <div class="form-field full">
-              <label for="message">Message <span style="font-size:0.75rem;opacity:0.45;">(optional)</span></label>
-              <textarea id="message" name="message" placeholder="Tell us about your vision, specific ceremonies you'd like covered, or any special requests…"></textarea>
+              <label for="message">संदेश <span style="font-size:0.75rem;opacity:0.45;">(वैकल्पिक)</span></label>
+              <textarea id="message" name="message" placeholder="हमें अपनी कल्पना के बारे में बताएँ, कौन-सी रस्में आप कवर कराना चाहेंगे, या कोई विशेष अनुरोध…"></textarea>
             </div>
 
           </div>
 
           <div class="form-submit">
-            <button type="submit" class="btn btn-saffron" id="submit-btn">Send My Enquiry</button>
-            <p class="form-error" id="form-error">Something went wrong. Please try again or email us directly.</p>
+            <button type="submit" class="btn btn-saffron" id="submit-btn">मेरी पूछताछ भेजें</button>
+            <p class="form-error" id="form-error">कुछ गड़बड़ हो गई। कृपया पुनः प्रयास करें या हमें सीधे ईमेल करें।</p>
           </div>
         </form>
 
         <div class="success-card" id="success-card">
           <div class="success-icon">✦</div>
-          <h3>Shubh Mangal!</h3>
-          <p>Your enquiry has been received. We'll be in touch within 24 hours to confirm your booking.</p>
+          <h3>शुभ मंगल!</h3>
+          <p>आपकी पूछताछ प्राप्त हो गई है। हम आपकी बुकिंग की पुष्टि के लिए 24 घंटे के भीतर संपर्क करेंगे।</p>
         </div>
       </div>
     </div>
@@ -983,8 +981,8 @@
   <section id="contact">
     <div class="container">
       <div class="section-header">
-        <p class="section-label">Sampark Karen</p>
-        <h2 class="section-title">Let's Connect</h2>
+        <p class="section-label">संपर्क करें</p>
+        <h2 class="section-title">आइए जुड़ें</h2>
         <div class="mandala-divider" style="max-width:320px;margin-left:auto;margin-right:auto;">
           <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="17" cy="17" r="2.5" fill="#C9952A"/>
@@ -997,12 +995,12 @@
       <div class="contact-cards">
         <div class="contact-card">
           <div class="contact-icon">☎</div>
-          <h4>Phone</h4>
+          <h4>फ़ोन</h4>
           <p>+91 98765 43210</p>
         </div>
         <div class="contact-card">
           <div class="contact-icon">✉</div>
-          <h4>Email</h4>
+          <h4>ईमेल</h4>
           <p>namaste@ananyabrides.in</p>
         </div>
         <div class="contact-card">
@@ -1017,15 +1015,15 @@
   <!-- FOOTER -->
   <footer>
     <p class="footer-logo">Ananya</p>
-    <p class="footer-tagline">अनन्य — Unparalleled Bridal Artistry</p>
+    <p class="footer-tagline">अनन्य — अतुलनीय वधू कला</p>
     <nav>
-      <a href="#about">About</a>
-      <a href="#packages">Packages</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#booking">Book Now</a>
-      <a href="#contact">Contact</a>
+      <a href="#about">परिचय</a>
+      <a href="#packages">पैकेज</a>
+      <a href="#gallery">गैलरी</a>
+      <a href="#booking">अभी बुक करें</a>
+      <a href="#contact">संपर्क</a>
     </nav>
-    <p>&copy; 2026 Ananya Bridal Photography. All rights reserved.</p>
+    <p>&copy; 2026 Ananya Bridal Photography. सर्वाधिकार सुरक्षित।</p>
   </footer>
 
   <script>
@@ -1069,7 +1067,7 @@
       };
 
       submitBtn.disabled = true;
-      submitBtn.innerHTML = '<span class="spinner"></span>Sending…';
+      submitBtn.innerHTML = '<span class="spinner"></span>भेजा जा रहा है…';
       formError.style.display = 'none';
 
       try {
@@ -1093,7 +1091,7 @@
       } catch {
         formError.style.display = 'block';
         submitBtn.disabled = false;
-        submitBtn.innerHTML = 'Send My Enquiry';
+        submitBtn.innerHTML = 'मेरी पूछताछ भेजें';
       }
     });
   </script>
