@@ -2,6 +2,8 @@
 
 A single-page bridal photography booking website. No build step, no framework — everything (HTML, CSS, JavaScript) lives in one file: `index.html`.
 
+![Lumière Bridal preview](screenshot.png)
+
 ## Features
 
 - **Hero** — Full-viewport intro with CTA
