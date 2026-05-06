@@ -1,45 +1,64 @@
-# Lumière Bridal — Wedding Photography Booking Site
+# Ananya — Bridal Photography
 
-A single-page bridal photography booking website. No build step, no framework — everything (HTML, CSS, JavaScript) lives in one file: `index.html`.
+> Luxury Indian wedding photography — from Mehendi to Vidaai, every precious moment preserved forever.
 
-![Lumière Bridal preview](screenshot.png)
-
-## Features
-
-- **Hero** — Full-viewport intro with CTA
-- **About** — Photographer bio with two-column layout
-- **Packages** — Three tiers (Elopement · Classic · Luxury) with pre-selection into the booking form
-- **Gallery** — Responsive masonry-style photo grid
-- **Booking Form** — 9-field form that submits via AJAX to [FormSubmit.co](https://formsubmit.co) — no page reload, spinner on submit, success/error states
-- **Contact** — Phone, email, and Instagram cards
-
-## Running Locally
-
-```bash
-python3 -m http.server 8080 --directory .
-# open http://localhost:8080
-```
+![screenshot](docs/screenshot.png)
 
 ## Tech Stack
 
-| Concern | Solution |
-|---|---|
-| Fonts | Google Fonts — *Great Vibes* (display) + *Cormorant Garamond* (body) |
-| Images | Unsplash (no account required) |
-| Form backend | FormSubmit.co AJAX endpoint |
-| Styling | Hand-written CSS with custom properties, no framework |
-| Scripting | Vanilla JS — no libraries |
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-222222?style=for-the-badge&logo=github&logoColor=white)
+![FormSubmit](https://img.shields.io/badge/FormSubmit.co-FF6B6B?style=for-the-badge)
 
-## Design Tokens
+## Live Site
 
-| Token | Value |
-|---|---|
-| Blush | `#f2a7b0` |
-| Gold | `#c9a96e` |
-| Rose | `#c9616d` |
-| Background | `#fff8f5` |
-| Text | `#3a2e2e` |
+🌐 [View Live Site](https://sourabhs82.github.io/bride_booking/)
 
-## Form Setup
+## File Structure
 
-Submissions go to FormSubmit.co. The first submission triggers a one-time confirmation email to the recipient address — approve it to activate the form.
+```
+bride_booking/
+├── index.html          # Entire site — HTML, CSS, and JS in one file
+├── docs/
+│   └── screenshot.png  # Site preview image
+├── .github/
+│   └── workflows/
+│       └── deploy.yml  # GitHub Actions → GitHub Pages
+└── README.md
+```
+
+## About the Project
+
+A single-page booking website for **Ananya Bridal Photography**, designed to appeal to affluent Indian wedding clients. The design uses a rich jewel-tone palette — deep maroon, warm saffron, and gold — with Cinzel Decorative and EB Garamond fonts to evoke traditional Indian luxury. Key features include Indian wedding ceremony packages (Mehendi, Sangeet, Shaadi Royale) with INR pricing, a six-image bridal gallery, and a booking form that POSTs directly to FormSubmit.co.
+
+## How to Use
+
+### View locally
+
+```bash
+# Option 1 — open directly
+open index.html
+
+# Option 2 — live-reload server (recommended)
+python3 -m http.server 8080 --directory .
+# then open http://localhost:8080
+```
+
+### Customise
+
+| What | Where in index.html |
+|------|---------------------|
+| Contact email | `fetch('https://formsubmit.co/ajax/<email>')` in `<script>` |
+| Colour palette | CSS custom properties on `:root` |
+| Packages & pricing | `#packages` section |
+| Gallery images | `#gallery` section — replace `src` URLs |
+
+### Deploy
+
+Push to the `main` branch — GitHub Actions deploys to GitHub Pages automatically.
+
+## License
+
+MIT
