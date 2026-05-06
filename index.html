@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lumière Bridal — Wedding Photography</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #fff8f5;
+      --blush: #f2a7b0;
+      --blush-light: #fde8ec;
+      --rose: #c9616d;
+      --gold: #c9a96e;
+      --gold-dark: #a8843e;
+      --text: #3a2e2e;
+      --text-light: #7a6a6a;
+      --white: #ffffff;
+      --font-body: 'Cormorant Garamond', Georgia, serif;
+      --font-display: 'Great Vibes', cursive;
+      --max-w: 1100px;
+      --radius-card: 4px;
+      --radius-input: 2px;
+      --transition: 0.3s ease;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--bg);
+      color: var(--text);
+      font-size: 18px;
+      line-height: 1.7;
+    }
+
+    img { display: block; max-width: 100%; }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 2rem;
+      transition: background var(--transition), box-shadow var(--transition), border-bottom var(--transition);
+    }
+
+    nav.scrolled {
+      background: rgba(255, 248, 245, 0.95);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 1px 0 var(--gold);
+    }
+
+    .nav-logo {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      color: var(--white);
+      transition: color var(--transition);
+    }
+
+    nav.scrolled .nav-logo { color: var(--rose); }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.85rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--white);
+      transition: color var(--transition);
+    }
+
+    nav.scrolled .nav-links a { color: var(--text); }
+    .nav-links a:hover { color: var(--gold); }
+
+    /* ── HERO ── */
+    #hero {
+      position: relative;
+      height: 100vh;
+      min-height: 600px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('https://images.unsplash.com/photo-1519741497674-611481863552?w=1600&auto=format&fit=crop');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .hero-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.38);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      padding: 0 1.5rem;
+    }
+
+    .hero-content h1 {
+      font-family: var(--font-display);
+      font-size: clamp(3.5rem, 8vw, 7rem);
+      color: var(--white);
+      line-height: 1.1;
+      margin-bottom: 1rem;
+      text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+    }
+
+    .hero-content p {
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      color: rgba(255,255,255,0.88);
+      letter-spacing: 0.08em;
+      margin-bottom: 2.5rem;
+      font-style: italic;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.85rem 2.5rem;
+      border: 2px solid var(--gold);
+      background: var(--gold);
+      color: var(--white);
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      cursor: pointer;
+      border-radius: var(--radius-card);
+      transition: background var(--transition), color var(--transition), transform var(--transition);
+    }
+
+    .btn:hover {
+      background: transparent;
+      color: var(--gold);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--gold);
+    }
+
+    .btn-outline:hover {
+      background: var(--gold);
+      color: var(--white);
+    }
+
+    /* ── SECTION COMMONS ── */
+    section {
+      padding: 6rem 2rem;
+    }
+
+    .container {
+      max-width: var(--max-w);
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 0.8rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      color: var(--text);
+      line-height: 1.15;
+      margin-bottom: 0.5rem;
+    }
+
+    .gold-divider {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin: 1.5rem 0 2.5rem;
+    }
+
+    .gold-divider::before,
+    .gold-divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--gold);
+      opacity: 0.5;
+    }
+
+    .gold-divider span {
+      color: var(--gold);
+      font-size: 0.7rem;
+    }
+
+    /* ── ABOUT ── */
+    #about .container {
+      display: grid;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .about-image {
+      position: relative;
+    }
+
+    .about-image img {
+      width: 100%;
+      height: 520px;
+      object-fit: cover;
+      border-radius: var(--radius-card);
+    }
+
+    .about-image::after {
+      content: '';
+      position: absolute;
+      top: 20px; left: 20px;
+      right: -20px; bottom: -20px;
+      border: 2px solid var(--gold);
+      border-radius: var(--radius-card);
+      z-index: -1;
+      opacity: 0.5;
+    }
+
+    .about-text p {
+      color: var(--text-light);
+      margin-bottom: 1.25rem;
+    }
+
+    .about-text p:first-of-type { color: var(--text); }
+
+    .about-signature {
+      font-family: var(--font-display);
+      font-size: 2.2rem;
+      color: var(--rose);
+      margin-top: 1.5rem;
+    }
+
+    /* ── PACKAGES ── */
+    #packages {
+      background: var(--blush-light);
+    }
+
+    #packages .section-header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+
+    .packages-grid {
+      display: grid;
+      gap: 2rem;
+    }
+
+    .pkg-card {
+      background: var(--white);
+      border: 1px solid #f0d8dc;
+      border-radius: var(--radius-card);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+
+    .pkg-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 40px rgba(201, 97, 109, 0.12);
+    }
+
+    .pkg-card-top {
+      height: 5px;
+      background: var(--gold);
+    }
+
+    .pkg-card.featured .pkg-card-top {
+      background: linear-gradient(90deg, var(--blush), var(--gold), var(--blush));
+    }
+
+    .pkg-card-body {
+      padding: 2.5rem 2rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .pkg-badge {
+      display: inline-block;
+      background: var(--rose);
+      color: var(--white);
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.75rem;
+      border-radius: 20px;
+      margin-bottom: 1rem;
+    }
+
+    .pkg-name {
+      font-family: var(--font-display);
+      font-size: 2.2rem;
+      color: var(--text);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .pkg-price {
+      font-size: 2rem;
+      font-weight: 600;
+      color: var(--rose);
+      margin-bottom: 1.5rem;
+    }
+
+    .pkg-price span {
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--text-light);
+    }
+
+    .pkg-features {
+      list-style: none;
+      margin-bottom: 2rem;
+      flex: 1;
+    }
+
+    .pkg-features li {
+      padding: 0.45rem 0;
+      border-bottom: 1px solid #f5e9eb;
+      color: var(--text-light);
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .pkg-features li::before {
+      content: '◆';
+      color: var(--gold);
+      font-size: 0.5rem;
+      flex-shrink: 0;
+    }
+
+    .pkg-btn {
+      width: 100%;
+      text-align: center;
+      padding: 0.9rem;
+      background: var(--white);
+      border: 2px solid var(--gold);
+      color: var(--gold-dark);
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      cursor: pointer;
+      border-radius: var(--radius-card);
+      transition: background var(--transition), color var(--transition), transform var(--transition);
+    }
+
+    .pkg-btn:hover {
+      background: var(--gold);
+      color: var(--white);
+      transform: translateY(-2px);
+    }
+
+    /* ── GALLERY ── */
+    #gallery .section-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1rem;
+    }
+
+    .gallery-item {
+      overflow: hidden;
+      border-radius: var(--radius-card);
+      height: 280px;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease, filter 0.5s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.06);
+      filter: brightness(1.05);
+    }
+
+    .gallery-item:hover {
+      box-shadow: 0 0 0 2px var(--gold);
+    }
+
+    /* ── BOOKING FORM ── */
+    #booking {
+      background: var(--blush-light);
+    }
+
+    #booking .section-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .form-wrap {
+      max-width: 680px;
+      margin: 0 auto;
+      background: var(--white);
+      border-radius: var(--radius-card);
+      padding: 3rem 2.5rem;
+      box-shadow: 0 8px 40px rgba(201, 97, 109, 0.08);
+    }
+
+    .form-grid {
+      display: grid;
+      gap: 1.25rem;
+    }
+
+    .form-field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    .form-field label {
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-light);
+    }
+
+    .form-field input,
+    .form-field select,
+    .form-field textarea {
+      font-family: var(--font-body);
+      font-size: 1rem;
+      color: var(--text);
+      background: var(--bg);
+      border: 1px solid #e0cdd0;
+      border-radius: var(--radius-input);
+      padding: 0.7rem 1rem;
+      transition: border-color var(--transition), outline var(--transition);
+      appearance: none;
+      -webkit-appearance: none;
+    }
+
+    .form-field select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23c9a96e' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 1rem center;
+      padding-right: 2.5rem;
+    }
+
+    .form-field input:focus,
+    .form-field select:focus,
+    .form-field textarea:focus {
+      outline: 2px solid var(--gold);
+      outline-offset: 1px;
+      border-color: var(--gold);
+    }
+
+    .form-field textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .form-submit {
+      margin-top: 0.5rem;
+    }
+
+    .form-submit .btn {
+      width: 100%;
+      text-align: center;
+      font-size: 0.9rem;
+      padding: 1rem;
+      border: 2px solid var(--gold);
+    }
+
+    .form-submit .btn:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .form-error {
+      color: #c0392b;
+      font-size: 0.9rem;
+      margin-top: 0.75rem;
+      display: none;
+    }
+
+    .success-card {
+      display: none;
+      text-align: center;
+      padding: 3rem 2rem;
+    }
+
+    .success-icon {
+      width: 72px;
+      height: 72px;
+      background: var(--blush-light);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+      font-size: 2rem;
+      color: var(--rose);
+    }
+
+    .success-card h3 {
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      color: var(--rose);
+      margin-bottom: 0.75rem;
+    }
+
+    .success-card p {
+      color: var(--text-light);
+    }
+
+    /* ── CONTACT ── */
+    #contact {
+      text-align: center;
+    }
+
+    #contact .section-header {
+      margin-bottom: 3rem;
+    }
+
+    .contact-cards {
+      display: grid;
+      gap: 1.5rem;
+      max-width: 700px;
+      margin: 0 auto 4rem;
+    }
+
+    .contact-card {
+      background: var(--white);
+      border: 1px solid #f0d8dc;
+      border-radius: var(--radius-card);
+      padding: 2rem;
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+
+    .contact-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(201, 97, 109, 0.1);
+    }
+
+    .contact-icon {
+      font-size: 1.8rem;
+      color: var(--gold);
+      margin-bottom: 0.75rem;
+    }
+
+    .contact-card h4 {
+      font-size: 0.8rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-light);
+      margin-bottom: 0.4rem;
+    }
+
+    .contact-card p {
+      font-size: 1.05rem;
+      color: var(--text);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--text);
+      color: rgba(255,255,255,0.6);
+      text-align: center;
+      padding: 2.5rem 2rem;
+      font-size: 0.85rem;
+      letter-spacing: 0.05em;
+    }
+
+    footer .footer-logo {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+
+    footer nav {
+      position: static;
+      justify-content: center;
+      padding: 0;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      background: none;
+      box-shadow: none;
+    }
+
+    footer nav a {
+      color: rgba(255,255,255,0.6);
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      transition: color var(--transition);
+    }
+
+    footer nav a:hover { color: var(--gold); }
+
+    /* ── SPINNER ── */
+    .spinner {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      border: 2px solid rgba(255,255,255,0.4);
+      border-top-color: var(--white);
+      border-radius: 50%;
+      animation: spin 0.7s linear infinite;
+      vertical-align: middle;
+      margin-right: 0.5rem;
+    }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ── RESPONSIVE ── */
+    @media (min-width: 600px) {
+      .contact-cards { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    @media (min-width: 768px) {
+      #about .container { grid-template-columns: 1fr 1fr; }
+      .packages-grid { grid-template-columns: repeat(3, 1fr); }
+
+      .form-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .form-field.full { grid-column: 1 / -1; }
+    }
+
+    @media (max-width: 767px) {
+      nav { padding: 1rem; }
+      .nav-links { gap: 1.25rem; }
+      .nav-links a { font-size: 0.75rem; }
+      section { padding: 4rem 1.25rem; }
+      .form-wrap { padding: 2rem 1.25rem; }
+      .about-image::after { display: none; }
+    }
+
+    @media (max-width: 480px) {
+      .nav-links { gap: 0.75rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="main-nav">
+    <a href="#hero" class="nav-logo">Lumière</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#packages">Packages</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#booking" class="btn" style="padding:0.4rem 1.2rem;font-size:0.75rem;">Book Now</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <p>Wedding &amp; Bridal Photography</p>
+      <h1>Your Love Story,<br>Beautifully Told</h1>
+      <a href="#booking" class="btn">Reserve Your Date</a>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+      <div class="about-image">
+        <img
+          src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=800&auto=format&fit=crop"
+          alt="Photographer at work during a wedding"
+          loading="lazy"
+        />
+      </div>
+      <div class="about-text">
+        <p class="section-label">Meet the Artist</p>
+        <h2 class="section-title">Capturing Forever in a Single Frame</h2>
+        <div class="gold-divider"><span>◆</span></div>
+        <p>
+          Hello, I'm Isabelle — a bridal photographer with over a decade of experience
+          documenting the most intimate, joyful, and fleeting moments of your wedding day.
+          My style blends timeless film-inspired tones with a gentle, editorial eye that
+          puts you at ease the moment we meet.
+        </p>
+        <p>
+          Every couple has a unique story. I believe the best photographs are not staged —
+          they are found in a glance across the aisle, a whispered word, a tear that refuses
+          to stay hidden. I am simply there to witness it and make it last forever.
+        </p>
+        <p>
+          Based in New York, available worldwide. Let's create something extraordinary together.
+        </p>
+        <p class="about-signature">Isabelle Laurent</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PACKAGES -->
+  <section id="packages">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">Collections</p>
+        <h2 class="section-title">Choose Your Package</h2>
+        <div class="gold-divider" style="max-width:320px;margin-left:auto;margin-right:auto;"><span>◆</span></div>
+      </div>
+      <div class="packages-grid">
+
+        <!-- Elopement -->
+        <div class="pkg-card">
+          <div class="pkg-card-top"></div>
+          <div class="pkg-card-body">
+            <p class="pkg-name">Elopement</p>
+            <p class="pkg-price">$1,200 <span>/ session</span></p>
+            <ul class="pkg-features">
+              <li>2 hours of coverage</li>
+              <li>1 location</li>
+              <li>80 professionally edited photos</li>
+              <li>Private online gallery</li>
+              <li>High-resolution digital files</li>
+            </ul>
+            <button class="pkg-btn" data-package="Elopement">Book This Package</button>
+          </div>
+        </div>
+
+        <!-- Classic -->
+        <div class="pkg-card featured">
+          <div class="pkg-card-top"></div>
+          <div class="pkg-card-body">
+            <span class="pkg-badge">Most Popular</span>
+            <p class="pkg-name">Classic</p>
+            <p class="pkg-price">$2,400 <span>/ wedding</span></p>
+            <ul class="pkg-features">
+              <li>6 hours of coverage</li>
+              <li>Up to 2 locations</li>
+              <li>300 professionally edited photos</li>
+              <li>Engagement session included</li>
+              <li>Printed keepsake album</li>
+              <li>Private online gallery</li>
+            </ul>
+            <button class="pkg-btn" data-package="Classic">Book This Package</button>
+          </div>
+        </div>
+
+        <!-- Luxury -->
+        <div class="pkg-card">
+          <div class="pkg-card-top"></div>
+          <div class="pkg-card-body">
+            <p class="pkg-name">Luxury</p>
+            <p class="pkg-price">$3,800 <span>/ wedding</span></p>
+            <ul class="pkg-features">
+              <li>Full day coverage (10 hrs)</li>
+              <li>Unlimited locations</li>
+              <li>500+ professionally edited photos</li>
+              <li>2 photographers</li>
+              <li>Engagement session included</li>
+              <li>Luxury lay-flat album</li>
+            </ul>
+            <button class="pkg-btn" data-package="Luxury">Book This Package</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">Portfolio</p>
+        <h2 class="section-title">A Glimpse of Our Work</h2>
+        <div class="gold-divider" style="max-width:320px;margin-left:auto;margin-right:auto;"><span>◆</span></div>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1606216794074-735e91aa2c92?w=600&auto=format&fit=crop" alt="Bride in elegant gown" loading="lazy" />
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=600&auto=format&fit=crop" alt="Wedding couple portrait" loading="lazy" />
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=600&auto=format&fit=crop" alt="Wedding rings close-up" loading="lazy" />
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=600&auto=format&fit=crop" alt="Bride bouquet detail" loading="lazy" />
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=600&auto=format&fit=crop" alt="Romantic outdoor ceremony" loading="lazy" />
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1550005809-91ad75fb315f?w=600&auto=format&fit=crop" alt="Wedding reception dancing" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKING FORM -->
+  <section id="booking">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">Reserve Your Date</p>
+        <h2 class="section-title">Book a Session</h2>
+        <div class="gold-divider" style="max-width:320px;margin-left:auto;margin-right:auto;"><span>◆</span></div>
+        <p style="color:var(--text-light);max-width:500px;margin:0 auto;text-align:center;">
+          Fill in the details below and I'll be in touch within 24 hours to confirm your booking.
+        </p>
+      </div>
+
+      <div class="form-wrap">
+        <form id="booking-form" novalidate>
+          <div class="form-grid">
+
+            <div class="form-field">
+              <label for="fullName">Full Name *</label>
+              <input type="text" id="fullName" name="fullName" placeholder="Jane Doe" required />
+            </div>
+
+            <div class="form-field">
+              <label for="email">Email Address *</label>
+              <input type="email" id="email" name="email" placeholder="jane@example.com" required />
+            </div>
+
+            <div class="form-field">
+              <label for="phone">Phone Number *</label>
+              <input type="tel" id="phone" name="phone" placeholder="+1 (555) 000-0000" required />
+            </div>
+
+            <div class="form-field">
+              <label for="preferredDate">Preferred Date *</label>
+              <input type="date" id="preferredDate" name="preferredDate" required />
+            </div>
+
+            <div class="form-field">
+              <label for="preferredTime">Preferred Time *</label>
+              <input type="time" id="preferredTime" name="preferredTime" required />
+            </div>
+
+            <div class="form-field">
+              <label for="package">Package *</label>
+              <select id="package" name="package" required>
+                <option value="" disabled selected>Select a package</option>
+                <option value="Elopement">Elopement — $1,200</option>
+                <option value="Classic">Classic — $2,400</option>
+                <option value="Luxury">Luxury — $3,800</option>
+              </select>
+            </div>
+
+            <div class="form-field">
+              <label for="location">Location / Venue *</label>
+              <input type="text" id="location" name="location" placeholder="Central Park, New York" required />
+            </div>
+
+            <div class="form-field">
+              <label for="numberOfPeople">Number of People *</label>
+              <input type="number" id="numberOfPeople" name="numberOfPeople" min="1" max="500" placeholder="2" required />
+            </div>
+
+            <div class="form-field full">
+              <label for="message">Message <span style="font-size:0.75rem;opacity:0.6;">(optional)</span></label>
+              <textarea id="message" name="message" placeholder="Tell me about your vision, special requests, or anything else you'd like me to know…"></textarea>
+            </div>
+
+          </div>
+
+          <div class="form-submit">
+            <button type="submit" class="btn" id="submit-btn">Send My Enquiry</button>
+            <p class="form-error" id="form-error">Something went wrong. Please try again or email us directly.</p>
+          </div>
+        </form>
+
+        <div class="success-card" id="success-card">
+          <div class="success-icon">✦</div>
+          <h3>Thank You!</h3>
+          <p>Your enquiry has been received. I'll be in touch within 24 hours to confirm your booking.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">Get in Touch</p>
+        <h2 class="section-title">Let's Connect</h2>
+        <div class="gold-divider" style="max-width:320px;margin-left:auto;margin-right:auto;"><span>◆</span></div>
+      </div>
+
+      <div class="contact-cards">
+        <div class="contact-card">
+          <div class="contact-icon">☎</div>
+          <h4>Phone</h4>
+          <p>+1 (212) 555-0198</p>
+        </div>
+        <div class="contact-card">
+          <div class="contact-icon">✉</div>
+          <h4>Email</h4>
+          <p>hello@lumierebrides.com</p>
+        </div>
+        <div class="contact-card">
+          <div class="contact-icon">✦</div>
+          <h4>Instagram</h4>
+          <p>@lumierebrides</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p class="footer-logo">Lumière</p>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#packages">Packages</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#booking">Book Now</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <p>&copy; 2026 Lumière Bridal Photography. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Nav scroll effect
+    const nav = document.getElementById('main-nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 60);
+    }, { passive: true });
+
+    // Package buttons → pre-select in form and scroll to booking
+    document.querySelectorAll('.pkg-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const pkg = btn.dataset.package;
+        const select = document.getElementById('package');
+        select.value = pkg;
+        document.getElementById('booking').scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+
+    // Booking form submission
+    const form = document.getElementById('booking-form');
+    const submitBtn = document.getElementById('submit-btn');
+    const formError = document.getElementById('form-error');
+    const successCard = document.getElementById('success-card');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      // Native validation
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      // Collect data
+      const data = {
+        fullName: form.fullName.value.trim(),
+        email: form.email.value.trim(),
+        phone: form.phone.value.trim(),
+        preferredDate: form.preferredDate.value,
+        preferredTime: form.preferredTime.value,
+        package: form.package.value,
+        location: form.location.value.trim(),
+        numberOfPeople: form.numberOfPeople.value,
+        message: form.message.value.trim(),
+      };
+
+      // Show spinner
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<span class="spinner"></span>Sending…';
+      formError.style.display = 'none';
+
+      try {
+        const res = await fetch('https://formsubmit.co/ajax/sourabh.sharma@gmail.com', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+          },
+          body: JSON.stringify(data),
+        });
+
+        const json = await res.json();
+
+        if (res.ok && json.success === 'true') {
+          form.style.display = 'none';
+          successCard.style.display = 'block';
+        } else {
+          throw new Error('Submission failed');
+        }
+      } catch {
+        formError.style.display = 'block';
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = 'Send My Enquiry';
+      }
+    });
+  </script>
+</body>
+</html>

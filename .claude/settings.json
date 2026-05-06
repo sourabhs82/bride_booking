@@ -1,0 +1,17 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "if": "Bash(open *)",
+            "statusMessage": "Starting local server on :8080…",
+            "command": "INPUT=$(cat); CMD=$(printf '%s' \"$INPUT\" | jq -r '.tool_input.command // \"\"'); if printf '%s' \"$CMD\" | grep -qE 'open .*(index\\.html|bride-booking)'; then kill $(lsof -ti:8080) 2>/dev/null; python3 -m http.server 8080 --directory /Users/siriusblack/Documents/bride-booking &>/dev/null & sleep 0.8; printf '{\"hookSpecificOutput\":{\"hookEventName\":\"PreToolUse\",\"updatedInput\":{\"command\":\"open http://localhost:8080\"}}}'; fi"
+          }
+        ]
+      }
+    ]
+  }
+}
