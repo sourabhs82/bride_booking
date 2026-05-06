@@ -390,6 +390,142 @@
       transform: translateY(-2px);
     }
 
+    /* ─── DESTINATION WIDGET ─── */
+    #destinations {
+      background: var(--saffron-light);
+      position: relative;
+    }
+    #destinations::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23C9952A' fill-opacity='0.06'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+    #destinations .section-header { text-align: center; margin-bottom: 3rem; }
+    #destinations .section-title { color: var(--maroon); }
+    .dest-widget {
+      max-width: 740px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .dest-select-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+    }
+    .dest-select-wrap label {
+      font-family: var(--font-heading);
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-light);
+    }
+    .dest-select-wrap select {
+      font-family: var(--font-body);
+      font-size: 1.05rem;
+      color: var(--text);
+      background: var(--white);
+      border: 2px solid var(--gold);
+      padding: 0.75rem 2.5rem 0.75rem 1.2rem;
+      appearance: none;
+      -webkit-appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23C9952A' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 1rem center;
+      cursor: pointer;
+      min-width: 280px;
+      text-align: center;
+      transition: border-color var(--transition), box-shadow var(--transition);
+    }
+    .dest-select-wrap select:focus {
+      outline: none;
+      border-color: var(--saffron);
+      box-shadow: 0 0 0 3px rgba(212,101,26,0.15);
+    }
+    .dest-card {
+      background: var(--white);
+      border: 1px solid rgba(201,149,42,0.3);
+      padding: 2.5rem 2rem;
+      display: none;
+      animation: fadeUp 0.4s ease both;
+    }
+    .dest-card.visible { display: block; }
+    .dest-card-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .dest-card-name {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      color: var(--maroon);
+    }
+    .dest-card-region {
+      font-family: var(--font-heading);
+      font-size: 0.62rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--saffron);
+    }
+    .dest-card-desc {
+      color: var(--text-light);
+      font-style: italic;
+      margin-bottom: 1.5rem;
+      font-size: 0.95rem;
+    }
+    .dest-pricing {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+    .dest-price-box {
+      background: var(--ivory);
+      border: 1px solid rgba(201,149,42,0.2);
+      padding: 1.25rem 1rem;
+      text-align: center;
+    }
+    .dest-price-label {
+      font-family: var(--font-heading);
+      font-size: 0.58rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-light);
+      margin-bottom: 0.4rem;
+    }
+    .dest-price-value {
+      font-family: var(--font-heading);
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: var(--maroon);
+    }
+    .dest-price-note {
+      font-size: 0.78rem;
+      color: var(--text-light);
+      margin-top: 0.25rem;
+    }
+    .dest-card-footer {
+      font-size: 0.82rem;
+      color: var(--text-light);
+      border-top: 1px solid rgba(201,149,42,0.2);
+      padding-top: 1rem;
+    }
+    .dest-popular-venues {
+      margin-top: 0.5rem;
+      font-style: italic;
+      color: var(--saffron);
+    }
+    @media (max-width: 480px) {
+      .dest-pricing { grid-template-columns: 1fr; }
+      .dest-card { padding: 1.5rem 1.25rem; }
+    }
+
     /* ─── GALLERY ─── */
     #gallery { background: var(--ivory); }
     #gallery .section-header { text-align: center; margin-bottom: 3rem; }
@@ -674,6 +810,7 @@
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#packages">Packages</a></li>
+      <li><a href="#destinations">Destinations</a></li>
       <li><a href="#gallery">Gallery</a></li>
       <li><a href="#booking" class="btn" style="padding:0.4rem 1.2rem;font-size:0.65rem;border:1px solid var(--gold);">Book Now</a></li>
     </ul>
@@ -845,6 +982,71 @@
           </div>
         </div>
 
+      </div>
+    </div>
+  </section>
+
+  <!-- DESTINATION WEDDING WIDGET -->
+  <section id="destinations">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">Destination Weddings</p>
+        <h2 class="section-title">Plan Your Dream Destination</h2>
+        <div class="mandala-divider" style="max-width:320px;margin-left:auto;margin-right:auto;">
+          <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="17" cy="17" r="2.5" fill="#C9952A"/>
+            <circle cx="17" cy="17" r="6.5" fill="none" stroke="#C9952A" stroke-width="0.75"/>
+            <circle cx="17" cy="17" r="11" fill="none" stroke="#C9952A" stroke-width="0.5" stroke-dasharray="2.5 2"/>
+            <path d="M17 2 L17 7 M17 27 L17 32 M2 17 L7 17 M27 17 L32 17" stroke="#C9952A" stroke-width="1"/>
+            <path d="M7.5 7.5 L10.5 10.5 M23.5 23.5 L26.5 26.5 M7.5 26.5 L10.5 23.5 M23.5 10.5 L26.5 7.5" stroke="#C9952A" stroke-width="0.75"/>
+          </svg>
+        </div>
+        <p style="color:var(--text-light);max-width:520px;margin:0 auto;text-align:center;font-style:italic;">
+          Explore average 5-star hotel prices at India's most sought-after wedding destinations.
+        </p>
+      </div>
+
+      <div class="dest-widget">
+        <div class="dest-select-wrap">
+          <label for="dest-select">Choose a Destination</label>
+          <select id="dest-select">
+            <option value="" disabled selected>Select a destination</option>
+            <option value="udaipur">Udaipur, Rajasthan</option>
+            <option value="jaipur">Jaipur, Rajasthan</option>
+            <option value="jodhpur">Jodhpur, Rajasthan</option>
+            <option value="goa">Goa</option>
+            <option value="kerala">Kerala</option>
+            <option value="mussoorie">Mussoorie, Uttarakhand</option>
+            <option value="shimla">Shimla, Himachal Pradesh</option>
+            <option value="agra">Agra, Uttar Pradesh</option>
+            <option value="rishikesh">Rishikesh, Uttarakhand</option>
+            <option value="jaisalmer">Jaisalmer, Rajasthan</option>
+          </select>
+        </div>
+
+        <div class="dest-card" id="dest-card">
+          <div class="dest-card-header">
+            <span class="dest-card-name" id="dest-name"></span>
+            <span class="dest-card-region" id="dest-region"></span>
+          </div>
+          <p class="dest-card-desc" id="dest-desc"></p>
+          <div class="dest-pricing">
+            <div class="dest-price-box">
+              <p class="dest-price-label">Avg. 5-Star Price / Night</p>
+              <p class="dest-price-value" id="dest-per-night"></p>
+              <p class="dest-price-note">per room per night</p>
+            </div>
+            <div class="dest-price-box">
+              <p class="dest-price-label">Est. 3-Night Wedding Stay</p>
+              <p class="dest-price-value" id="dest-total"></p>
+              <p class="dest-price-note">per room, 3 nights</p>
+            </div>
+          </div>
+          <div class="dest-card-footer">
+            <p>Prices are approximate averages for 5-star properties during wedding season (Oct–Mar).</p>
+            <p class="dest-popular-venues" id="dest-venues"></p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -1021,6 +1223,7 @@
     <nav>
       <a href="#about">About</a>
       <a href="#packages">Packages</a>
+      <a href="#destinations">Destinations</a>
       <a href="#gallery">Gallery</a>
       <a href="#booking">Book Now</a>
       <a href="#contact">Contact</a>
@@ -1041,6 +1244,94 @@
         select.value = pkg;
         document.getElementById('booking').scrollIntoView({ behavior: 'smooth' });
       });
+    });
+
+    const destinations = {
+      udaipur: {
+        name: 'Udaipur',
+        region: 'Rajasthan — City of Lakes',
+        desc: 'The crown jewel of destination weddings in India. Lakeside palaces and royal heritage make every celebration feel like a maharaja\'s affair.',
+        perNight: 45000,
+        venues: 'Taj Lake Palace, The Oberoi Udaivilas, The Leela Palace, Fateh Prakash Palace'
+      },
+      jaipur: {
+        name: 'Jaipur',
+        region: 'Rajasthan — The Pink City',
+        desc: 'Majestic forts and vibrant culture provide a grand backdrop. More accessible pricing than Udaipur with equal splendour.',
+        perNight: 35000,
+        venues: 'Rambagh Palace, The Oberoi Rajvilas, ITC Rajputana, Fairmont Jaipur'
+      },
+      jodhpur: {
+        name: 'Jodhpur',
+        region: 'Rajasthan — The Blue City',
+        desc: 'Dramatic desert landscapes and imposing forts create an unforgettable royal setting for your celebrations.',
+        perNight: 40000,
+        venues: 'Umaid Bhawan Palace, Taj Hari Mahal, WelcomHeritage Bal Samand Lake Palace'
+      },
+      goa: {
+        name: 'Goa',
+        region: 'India\'s Beach Paradise',
+        desc: 'Sun-kissed beaches and lush tropical charm. Perfect for couples wanting a relaxed, resort-style celebration.',
+        perNight: 28000,
+        venues: 'Taj Exotica, W Goa, Grand Hyatt Goa, ITC Grand Goa'
+      },
+      kerala: {
+        name: 'Kerala',
+        region: 'God\'s Own Country',
+        desc: 'Serene backwaters, coconut groves, and lush greenery offer a tranquil and intimate destination.',
+        perNight: 22000,
+        venues: 'Taj Bekal, Kumarakom Lake Resort, The Leela Kovalam, Zuri Kumarakom'
+      },
+      mussoorie: {
+        name: 'Mussoorie',
+        region: 'Uttarakhand — Queen of Hills',
+        desc: 'Misty mountain views and colonial-era charm in the Himalayan foothills. Ideal for intimate, elegant weddings.',
+        perNight: 20000,
+        venues: 'JW Marriott Mussoorie, Jaypee Residency Manor, The Savoy'
+      },
+      shimla: {
+        name: 'Shimla',
+        region: 'Himachal Pradesh — Hill Station',
+        desc: 'Pine-clad hills and crisp mountain air provide a picturesque setting away from the plains\' heat.',
+        perNight: 18000,
+        venues: 'The Oberoi Cecil, Wildflower Hall, The Chalets Naldehra'
+      },
+      agra: {
+        name: 'Agra',
+        region: 'Uttar Pradesh — City of the Taj',
+        desc: 'Celebrate love in the shadow of the world\'s greatest monument to love. Mughal grandeur at every turn.',
+        perNight: 18000,
+        venues: 'The Oberoi Amarvilas, ITC Mughal, Taj Hotel & Convention Centre'
+      },
+      rishikesh: {
+        name: 'Rishikesh',
+        region: 'Uttarakhand — Yoga Capital',
+        desc: 'Spiritual serenity on the banks of the Ganga. A unique choice for couples seeking a meaningful, nature-filled celebration.',
+        perNight: 15000,
+        venues: 'Taj Rishikesh, Aloha on the Ganges, Ananda in the Himalayas'
+      },
+      jaisalmer: {
+        name: 'Jaisalmer',
+        region: 'Rajasthan — The Golden City',
+        desc: 'Golden sandstone architecture and the Thar Desert create a magical, other-worldly wedding setting.',
+        perNight: 32000,
+        venues: 'Suryagarh, Hotel Rang Mahal, The Serai Jaisalmer'
+      }
+    };
+
+    const destSelect = document.getElementById('dest-select');
+    const destCard = document.getElementById('dest-card');
+
+    destSelect.addEventListener('change', () => {
+      const d = destinations[destSelect.value];
+      if (!d) return;
+      document.getElementById('dest-name').textContent = d.name;
+      document.getElementById('dest-region').textContent = d.region;
+      document.getElementById('dest-desc').textContent = d.desc;
+      document.getElementById('dest-per-night').textContent = '₹' + d.perNight.toLocaleString('en-IN');
+      document.getElementById('dest-total').textContent = '₹' + (d.perNight * 3).toLocaleString('en-IN');
+      document.getElementById('dest-venues').textContent = 'Popular venues: ' + d.venues;
+      destCard.classList.add('visible');
     });
 
     const form = document.getElementById('booking-form');
